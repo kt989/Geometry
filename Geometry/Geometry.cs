@@ -9,7 +9,8 @@ namespace Geometry
 {
     public abstract class Shape
     {
-
+        string Name_of_Shape { get; set; }
+        public abstract double get_Area();
     }
 
     public class Circle : Shape
@@ -21,7 +22,7 @@ namespace Geometry
             this.radius = radius;
         }
         
-        public double get_area(double radius)
+        public override double get_Area()
         {
             double area = 3.14 * radius * radius;
             return area;
@@ -43,7 +44,7 @@ namespace Geometry
             this.z = z;
         }
 
-        public double get_area(double x, double y, double z)
+        public override double get_Area()
         {
             double h;
             if (x == y && x == z && y == z)
@@ -51,12 +52,14 @@ namespace Geometry
                 h = Math.Sqrt(x * x - 0.25 * x * x);
                 area = 0.5 * x * h;
             }
-            if (x==y ||y==z||z==x)
+            else if (x==y ||y==z||z==x)
             {
                 double osnovanie = x==y? z:(x==z?y:x);
                 h = Math.Sqrt(osnovanie * osnovanie - 0.25 * x * x);
                 area = 0.5 * x * h;
             }
+
+
             return area;
         }
 

@@ -19,7 +19,7 @@ if (Variable == 1)
         else storona[i++]=Convert.ToDouble(item);
     }
     Triangle obj1= new Triangle(storona[0], storona[1], storona[2]);
-    area = obj1.get_area(storona[0], storona[1], storona[2]);
+    area = obj1.get_Area();
     Console.WriteLine("Площадь треугольника равна " + area);
 
 }
@@ -28,6 +28,6 @@ else
     Console.WriteLine("Введите радиусл: ");
     double radius = Convert.ToDouble(Console.ReadLine());
     Circle obj = new Circle(radius);
-    area=obj.get_area(radius);
+    area=obj.get_Area();
     Console.WriteLine("Площадь коуга равна " + area);
 }
